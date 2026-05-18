@@ -19,10 +19,13 @@ export default function RewardForm() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: name === "points" ? parseInt(value, 10) : value,
-    }));
+
+    let parsed: string | number = value;
+    if (name === "points") {
+      parsed = value === "" ? "" : Number.parseInt(value, 10);
+    }
+
+    setFormData((prev) => ({ ...prev, [name]: parsed }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
