@@ -21,7 +21,7 @@ export default function RewardForm() {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: name === "points" ? parseInt(value, 10) : value,
+      [name]: name === "points" ? (value === "" ? "" : parseInt(value, 10)) : value,
     }));
   };
 
