@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Points System - Performance Testing Assignment
 
-## Getting Started
+A minimal point-based reward system built with Next.js, TypeScript, React, and Neon PostgreSQL for SOFTENG 754 Assignment 6.
 
-First, run the development server:
+## Features
+
+- **Point System**: Award and track user points
+- **Admin Dashboard**: Interface for admins to reward users
+- **Leaderboard**: Real-time ranking of users by points
+- **RESTful API**: Endpoints for points management
+
+## Tech Stack
+
+- **Frontend**: Next.js 16, React 19, TypeScript
+- **Backend**: Next.js API Routes
+- **Database**: Neon PostgreSQL
+- **Styling**: Tailwind CSS
+- **Package Manager**: npm
+
+## Setup
+
+### 1. Environment Setup
+
+Clone `.env.local.example` to `.env.local` and add your Neon database URL:
+
+```bash
+cp .env.local.example .env.local
+```
+
+Edit `.env.local`:
+```
+DATABASE_URL=postgresql://user:password@ep-xxxxx.neon.tech/neondb
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+npm install @neondatabase/serverless
+```
+
+### 3. Database Setup
+
+Run the SQL schema in `src/lib/database.sql` in your Neon console to create tables and indexes.
+
+### 4. Start Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API Endpoints
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Users
+- `GET /api/users` - List all users
+- `POST /api/users` - Create a new user
+  ```json
+  {
+    "user_id": "user123",
+    "username": "john_doe",
+    "email": "john@example.com"
+  }
+  ```
 
-## Learn More
+### Rewards
+- `POST /api/reward` - Award points to a user
+  ```json
+  {
+    "user_id": "user123",
+    "points": 10,
+    "reason": "Completed assignment"
+  }
+  ```
 
-To learn more about Next.js, take a look at the following resources:
+### Leaderboard
+- `GET /api/leaderboard?limit=100&offset=0` - Get leaderboard rankings
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Pages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `/` - Home page
+- `/leaderboard` - Public leaderboard view
+- `/admin` - Admin dashboard for awarding points
 
-## Deploy on Vercel
+## Directory Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+src/
+├── app/
+│   ├── api/
+│   │   ├── users/route.ts
+│   │   ├── reward/route.ts
+│   │   └── leaderboard/route.ts
+│   ├── leaderboard/page.tsx
+│   ├── admin/page.tsx
+│   └── page.tsx
+├── components/
+│   ├── LeaderboardTable.tsx
+│   ├── RewardForm.tsx
+│   └── Navbar.tsx
+├── lib/
+│   ├── db.ts
+│   └── database.sql
+└── types/
+    └── user.ts
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Performance Testing
+
+This implementation supports performance testing with realistic workloads:
+- Database schema optimized with indexes on frequently queried columns
+- API endpoints designed for load testing
+- Pagination support on leaderboard endpoint
+
+See `src/test/resources/performancetest/` for JMeter test plans.
+
+## Development Notes
+
+- Database schema includes proper indexing for performance
+- All endpoints return appropriate HTTP status codes
+- Error handling with descriptive error messages
+- Type-safe API and component development
+
+## Team Contribution
+
+Add contribution details in the final report under Task 1 deliverables.
