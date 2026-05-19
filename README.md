@@ -1,3 +1,7 @@
+## Using the Reward Feature
+
+The reward system allows administrators to assign points to users through the admin dashboard at `/admin`. Admins can reward users by filling in a form containing the user ID, the number of points to award, and an optional reason describing the reward. Awarded points are stored persistently and contribute to the user’s overall ranking. Users can view the public leaderboard at `/leaderboard`, which displays all users ranked in descending order based on their total accumulated points.
+
 # Points System - Performance Testing Assignment
 
 A minimal point-based reward system built with Next.js, TypeScript, React, and Neon PostgreSQL for SOFTENG 754 Assignment 6.
