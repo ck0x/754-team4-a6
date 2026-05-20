@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# JMeter logs and results
+*.jtl
+*.csv
+*.log
+report_*/
+web_report_folder/
+results_*.csv
