@@ -210,7 +210,7 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">test_results_stage1_10users.csv</stringProp>
+          <stringProp name="filename">test_results_scalability_stage1_10users.csv</stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>
@@ -399,7 +399,7 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">test_results_stage2_25users.csv</stringProp>
+          <stringProp name="filename">test_results_scalability_stage2_25users.csv</stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>
@@ -588,7 +588,7 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">test_results_stage3_50users.csv</stringProp>
+          <stringProp name="filename">test_results_scalability_stage3_50users.csv</stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>
@@ -777,7 +777,7 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">test_results_stage4_100users.csv</stringProp>
+          <stringProp name="filename">test_results_scalability_stage4_100users.csv</stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>
