@@ -47,4 +47,6 @@ next-env.d.ts
 report_*/
 web_report_folder/
 results_*.csv
+
+# Exclude all test result CSV files except those matching the specified pattern
 !src/test/resources/performancetest/test_results_scalability_*.csv
