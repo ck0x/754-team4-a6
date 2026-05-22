@@ -42,7 +42,6 @@ next-env.d.ts
 
 # JMeter logs and results
 *.jtl
-*.csv
 *.log
 report_*/
 web_report_folder/
