@@ -57,6 +57,11 @@
           <stringProp name="ConstantTimer.delay">3000</stringProp>
         </ConstantTimer>
         <hashTree/>
+        <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="CSV Collector - stress_50users.csv">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <stringProp name="filename">src/test/resources/performancetest/stress_50users.csv</stringProp>
+        </ResultCollector>
+        <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Stage 2 - 100 Users">
         <stringProp name="ThreadGroup.num_threads">100</stringProp>
@@ -111,6 +116,11 @@
         <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="3 Second Constant Timer">
           <stringProp name="ConstantTimer.delay">3000</stringProp>
         </ConstantTimer>
+        <hashTree/>
+        <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="CSV Collector - stress_100users.csv">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <stringProp name="filename">src/test/resources/performancetest/stress_100users.csv</stringProp>
+        </ResultCollector>
         <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Stage 3 - 150 Users">
@@ -167,6 +177,11 @@
           <stringProp name="ConstantTimer.delay">3000</stringProp>
         </ConstantTimer>
         <hashTree/>
+        <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="CSV Collector - stress_150users.csv">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <stringProp name="filename">src/test/resources/performancetest/stress_150users.csv</stringProp>
+        </ResultCollector>
+        <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Stage 4 - 200 Users">
         <stringProp name="ThreadGroup.num_threads">200</stringProp>
@@ -222,7 +237,25 @@
           <stringProp name="ConstantTimer.delay">3000</stringProp>
         </ConstantTimer>
         <hashTree/>
+        <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="CSV Collector - stress_200users.csv">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <stringProp name="filename">src/test/resources/performancetest/stress_200users.csv</stringProp>
+        </ResultCollector>
+        <hashTree/>
       </hashTree>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Summary Report">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="CSV Collector - stress_results.csv">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <stringProp name="filename">src/test/resources/performancetest/stress_results.csv</stringProp>
+      </ResultCollector>
+      <hashTree/>
     </hashTree>
   </hashTree>
 </jmeterTestPlan>
