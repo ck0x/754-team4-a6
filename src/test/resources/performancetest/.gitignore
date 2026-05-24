@@ -5,3 +5,4 @@
 report_*/
 web_report_folder/
 results_*.csv
+!stress_*.csv
