@@ -50,3 +50,4 @@ results_*.csv
 
 # Exclude all test result CSV files except those matching the specified pattern
 !src/test/resources/performancetest/test_results_scalability_*.csv
+spike_report/
